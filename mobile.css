@@ -1,0 +1,12 @@
+@media only screen and (max-width: 900px) {
+    .flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .side-image {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 25px;
+        min-width: 100%;
+        height: 30vh;
+    }
+}

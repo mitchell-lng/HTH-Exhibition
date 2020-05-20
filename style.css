@@ -52,8 +52,6 @@ main {
     color: white;
 }
 
-#headerimage a {}
-
 main {
     margin-top: 6vw;
     margin-bottom: 6vw;
@@ -153,7 +151,7 @@ main {
 .close {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 40px;
     color: white;
     cursor: pointer;
     font-family: sans-serif;
