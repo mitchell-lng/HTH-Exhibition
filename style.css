@@ -38,6 +38,7 @@ select, input {
     font-family: sans-serif;
     color: black;
     text-decoration: none;
+    transition: 0.4s;
 }
 
 #listview section a:hover {
@@ -81,7 +82,7 @@ select, input {
     font-family: 'DM Mono', monospace;
     text-align: center;
     color: white;
-    padding: 10vw;
+    padding: 50px;
 }
 
 #headerbuttons {
@@ -245,7 +246,7 @@ select, input {
     background-repeat: no-repeat;
     background-size: contain;
     width: 250px;
-    height: 30vh;
+    height: 100px;
     display: inline-block;
     background-position: center;
     margin: 30px;
