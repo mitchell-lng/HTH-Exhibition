@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -50,6 +51,28 @@ main {
     font-family: 'DM Mono', monospace;
     text-align: center;
     color: white;
+}
+
+#headerbuttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#headerbuttons a {
+    color: black;
+    padding: 2vh 2vw;
+    border: black 4pt;
+    background: white;
+    margin: 4vw;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: 0.4s;
+}
+
+#headerbuttons a:hover, a:active {
+    color: white;
+    background-color: darkslategray;
 }
 
 main {
@@ -188,3 +211,4 @@ footer span {
 footer h5 {
     text-align: right;
 }
+
