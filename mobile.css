@@ -1,12 +1,22 @@
 @media only screen and (max-width: 900px) {
     .flex {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
     .side-image {
         border-bottom-left-radius: 0;
-        border-top-right-radius: 25px;
+        border-top-right-radius: 20px;
         min-width: 100%;
         height: 30vh;
+    }
+
+    .project-description {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .box-popup {
+        width: 80vw;
     }
 }

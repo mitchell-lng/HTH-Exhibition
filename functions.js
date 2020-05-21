@@ -1,18 +1,41 @@
+var data;
+
 function getData() {
     let result;
     const url = "https://raw.githubusercontent.com/monkie1357/hthexhibition/master/exhibitions.json";
     const request = new XMLHttpRequest();
     request.open('GET', url);
-    request.responseType = "string";
+    request.responseType = "text";
     request.send();
     result = request.onload = function() {
-        createPage(JSON.parse(request.response));
+        data = JSON.parse(request.response);
+        createPage();
     }
 }
 
-function createPage(exhibitions) {
-    for (let x = 0; x < exhibitions.length; x++) {
-        const i = exhibitions[x];
+function clearMain() {
+    const listview = document.getElementById("listview");
+    listview.innerHTML = "";
+}
+
+function createPage() {
+    for (let x = 0; x < data.length; x++) {
+        const i = data[x];
+        
+        clearMain();
+
+        var search_school = $( "#school" ).val().toLowerCase();
+        var school_name = i.school.toLowerCase();
+        if (!("all" == search_school)) {
+            if (!(school_name == search_school)) { continue; }
+        }
+
+        var search_teacher = $( "#teacher" ).val().toLowerCase();
+        var teacher_name = i.teacher.toLowerCase();
+        if (!("" == search_teacher)) {
+            if (teacher_name.match(search_teacher) == null) { continue; }
+        }
+
         const listview = document.getElementById("listview");
         const section = document.createElement("section");
         const openBox = document.createElement("a");
@@ -39,10 +62,10 @@ function createPage(exhibitions) {
             $(this).next().css('display', 'block')
         });
         
-        school.setAttribute("class", "item-school small-item");
+        school.setAttribute("class", "item-school small-item item");
         school.textContent = i.school;
 
-        teacher.setAttribute("class", "item-teacher small-item");
+        teacher.setAttribute("class", "item-teacher small-item item");
         teacher.textContent = i.teacher;
 
         name.setAttribute("class", "item-name item");
@@ -51,9 +74,9 @@ function createPage(exhibitions) {
         expand.setAttribute("class", "expand item");
 
         popup.setAttribute("class", "popup");
-        $(popup).click(function () {
-            $(this).css('display', 'none')
-        });
+        // $(popup).click(function () {
+        //     $(this).css('display', 'none')
+        // });
 
         boxPopup.setAttribute("class", "box-popup");
 
@@ -76,8 +99,13 @@ function createPage(exhibitions) {
         // close.textContent = "Close";
 
         closeDiv1.setAttribute("class", "box-2");
+        $(closeDiv1).click(function () {
+            $(popup).css('display', 'none')
+        });
         closeDiv2.setAttribute("class", "btn btn-two");
         closeSpan.textContent = "CLOSE";
+        closeSpan.setAttribute('class', 'closeSpan')
+        
 
         section.appendChild(openBox);
         openBox.appendChild(school);
