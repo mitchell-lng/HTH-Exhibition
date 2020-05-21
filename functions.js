@@ -10,13 +10,10 @@ function getData() {
     }
 ]'
     */
-    var reader = new FileReader();
 
-    reader.addEventListener("loadend", function() {
-        return JSON.parse(reader.result);
+    $.getJSON("https://raw.githubusercontent.com/monkie1357/hthexhibition/master/exhibitions.json", function(data){
+        return JSON.parse(data);
     });
-
-    reader.readAsText('exhibitions.json', "UTF-8");
 }
 
 function createPage() {
