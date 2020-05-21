@@ -26,7 +26,7 @@ select, input {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom-color: #FF5E5B;
+    border-bottom-color: #3694c7;
     border-bottom-width: 3px;
     margin-right: 4vw;
     margin-left: 1vw;
@@ -51,11 +51,11 @@ select, input {
 }
 
 #listview section:nth-child(odd) {
-    background-color: #FF5E5B; /*rgb(215, 215, 215);*/
+    background-color: #3694c7;
 }
 
 #listview section:nth-child(odd) .project-description {
-    background-color: #FF5E5B; /*rgb(215, 215, 215);*/
+    background-color: #3694c7;
 }
 
 #listview section:nth-child(odd) > * {
@@ -145,8 +145,8 @@ select, input {
     border-bottom-width: 2px;
     border-top-style: solid;
     border-bottom-style: solid;
-    border-top-color: #FF5E5B;
-    border-bottom-color:#FF5E5B;
+    border-top-color: #3694c7;
+    border-bottom-color:#3694c7;
     transform: scale(0.1, 1);
 }
 
@@ -296,6 +296,10 @@ main {
     flex: 5;
 }
 
+.item-teacher {
+    flex: 2;
+}
+
 .item {
     margin-bottom: auto;
     margin-top: auto;
@@ -382,6 +386,7 @@ main {
 footer {
     background-color: black;
     padding: 4vw;
+    padding-bottom: 8vw;
 }
 
 footer h1 {
