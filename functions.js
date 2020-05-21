@@ -1,27 +1,18 @@
 function getData() {
-    /*const json = '[
-    {
-        "title": "Our Book Club and Research",
-        "school": "HTHM",
-        "teacher": "David Roney",
-        "image": "http://hthmfarmtomesa.com/images/IMG_0777.JPG",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac accumsan augue, ut semper eros. Nullam augue tellus, sagittis eget tortor commodo, aliquam interdum nisi. Cras pretium, ex in commodo fermentum, orci quam eleifend diam, ac sollicitudin odio risus vitae massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur in velit nisl. Vivamus consequat sodales neque volutpat bibendum. Nulla lectus nibh, molestie ac feugiat facilisis, efficitur a magna.",
-        "link": "https://hthmfarmtomesa.com"
+    let result;
+    const url = "https://raw.githubusercontent.com/monkie1357/hthexhibition/master/exhibitions.json";
+    const request = new XMLHttpRequest();
+    request.open('GET', url);
+    request.responseType = "string";
+    request.send();
+    result = request.onload = function() {
+        createPage(JSON.parse(request.response));
     }
-]'
-    */
-
-    $.getJSON("https://raw.githubusercontent.com/monkie1357/hthexhibition/master/exhibitions.json", function(data){
-        return JSON.parse(data);
-    });
 }
 
-function createPage() {
-    exhibitions = getData();
-
+function createPage(exhibitions) {
     for (let x = 0; x < exhibitions.length; x++) {
         const i = exhibitions[x];
-
         const listview = document.getElementById("listview");
         const section = document.createElement("section");
         const openBox = document.createElement("a");
@@ -38,9 +29,15 @@ function createPage() {
         const ourProject = document.createElement("h1");
         const descriptionText = document.createElement("span");
         const join = document.createElement("a");
-        const close = document.createElement("div");
+        // const close = document.createElement("div");
+        const closeDiv1 = document.createElement("div");
+        const closeDiv2 = document.createElement("div");
+        const closeSpan = document.createElement("span");
 
         openBox.setAttribute("class", "open-box");
+        $(openBox).click(function () {
+            $(this).next().css('display', 'block')
+        });
         
         school.setAttribute("class", "item-school small-item");
         school.textContent = i.school;
@@ -54,6 +51,9 @@ function createPage() {
         expand.setAttribute("class", "expand item");
 
         popup.setAttribute("class", "popup");
+        $(popup).click(function () {
+            $(this).css('display', 'none')
+        });
 
         boxPopup.setAttribute("class", "box-popup");
 
@@ -69,10 +69,15 @@ function createPage() {
         descriptionText.textContent = i.content;
 
         join.setAttribute("href", i.link);
+        join.setAttribute("target", "_blank")
         join.textContent = "Join our Exhibition";
 
-        close.setAttribute("class", "close");
-        close.textContent = "Close";
+        // close.setAttribute("class", "close");
+        // close.textContent = "Close";
+
+        closeDiv1.setAttribute("class", "box-2");
+        closeDiv2.setAttribute("class", "btn btn-two");
+        closeSpan.textContent = "CLOSE";
 
         section.appendChild(openBox);
         openBox.appendChild(school);
@@ -88,20 +93,11 @@ function createPage() {
         div.appendChild(ourProject);
         div.appendChild(descriptionText);
         descriptionDiv.append(join);
-        popup.appendChild(close);
+        // popup.appendChild(close);
+        popup.appendChild(closeDiv1);
+        closeDiv1.appendChild(closeDiv2);
+        closeDiv2.appendChild(closeSpan);
 
         listview.appendChild(section);
     }
-}
-
-function close() {
-    $('.popup').click(function () {
-        $(this).css('display', 'none')
-    });
-}
-
-function open() {
-    $('.open-box').click(function () {
-        $(this).next().css('display', 'block')
-    });
 }
