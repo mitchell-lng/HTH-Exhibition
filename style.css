@@ -32,6 +32,13 @@ select, input {
     margin-left: 1vw;
 }
 
+select:focus, input:focus {
+    border-bottom-color: black;
+    /* transform: scale(0.1, 1); */
+    transition: all 0.4s;
+
+}
+
 #listview section a {
     display: flex;
     padding: 2vw;
@@ -67,7 +74,8 @@ select, input {
 }
 
 #headerimage {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/headerimage.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/Untitled.png');
+    /*url("images/headerimage.jpeg");*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -200,7 +208,7 @@ select, input {
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #3694c7;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -213,7 +221,7 @@ select, input {
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #3694c7;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -253,7 +261,7 @@ select, input {
 }
 
 #info > .images :nth-child(1) {
-    background-image: url('https://www.hightechhigh.org/wp-content/uploads/2018/03/HTH-logo.png');
+    background-image: url('https://www.hightechhigh.org/hth/wp-content/themes/HTH/assets/images/?img=HTHLogo');
 }
 
 #info > .images :nth-child(2) {
@@ -270,12 +278,75 @@ select, input {
 
 .text {
     font-family: sans-serif;
+    padding: 7vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    background-color: #3694c7;
+    color: white;
+}
+
+.text a {
+    color: black;
 }
 
 .text h1 {
     text-align: center;
     font-family: 'DM Mono', monospace;
+    padding-bottom: 20px;
 }
+/*
+.projects-images > div {
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.projects-images > div > article {
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    height: 25vw;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.projects-images > div :nth-child(1) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_1362.JPG');
+}
+
+.projects-images > div :nth-child(4) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_4036.JPG');
+}
+
+.projects-images > div :nth-child(2) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_7556.jpg');
+}
+
+.projects-images > div :nth-child(3) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_7796.JPG');
+}
+
+.second-section > div :nth-child(1) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_1362.JPG');
+}
+
+.second-section > div :nth-child(2) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_1362.JPG');
+}
+
+.second-section > div :nth-child(3) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_1362.JPG');
+}
+
+.second-section > div :nth-child(4) {
+    background-image: url('http://hthmfarmtomesa.com/images/IMG_1362.JPG');
+}
+
+*/
 
 main {
     margin-top: 6vw;
