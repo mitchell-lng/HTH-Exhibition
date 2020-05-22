@@ -19,11 +19,10 @@ function clearMain() {
 }
 
 function createPage() {
+    clearMain();
     for (let x = 0; x < data.length; x++) {
         const i = data[x];
         
-        clearMain();
-
         var search_school = $( "#school" ).val().toLowerCase();
         var school_name = i.school.toLowerCase();
         if (!("all" == search_school)) {
