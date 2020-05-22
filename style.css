@@ -39,6 +39,10 @@ select:focus, input:focus {
 
 }
 
+.no-cursor {
+    cursor: default !important;
+}
+
 #listview section a {
     display: flex;
     padding: 2vw;

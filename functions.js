@@ -16,6 +16,30 @@ function getData() {
 function clearMain() {
     const listview = document.getElementById("listview");
     listview.innerHTML = "";
+
+    const section = document.createElement("section");
+    const openBox = document.createElement("a");
+    const school = document.createElement("div");
+    const teacher = document.createElement("div");
+    const name = document.createElement("div");
+
+    openBox.setAttribute("class", "no-cursor");
+
+    school.setAttribute("class", "item-school small-item item");
+    school.textContent = "School";
+
+    teacher.setAttribute("class", "item-teacher small-item item");
+    teacher.textContent = "Teacher";
+
+    name.setAttribute("class", "item-name item");
+    name.textContent = "Title";
+
+    section.appendChild(openBox);
+    openBox.appendChild(school);
+    openBox.appendChild(teacher);
+    openBox.appendChild(name);
+
+    listview.appendChild(section);
 }
 
 function createPage() {

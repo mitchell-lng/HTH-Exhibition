@@ -2,6 +2,7 @@
     .flex {
         flex-direction: column;
     }
+
     .side-image {
         border-bottom-left-radius: 0;
         border-top-right-radius: 20px;
